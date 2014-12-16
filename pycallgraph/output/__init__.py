@@ -1,4 +1,7 @@
-import collections
+try:
+    from collections import OrderedDict
+except:
+    from ordereddict import OrderedDict
 
 from .output import Output
 from .graphviz import GraphvizOutput
@@ -7,7 +10,7 @@ from .ubigraph import UbigraphOutput
 from .pickle import PickleOutput
 
 
-outputters = collections.OrderedDict([
+outputters = OrderedDict([
     ('graphviz', GraphvizOutput),
     ('gephi', GephiOutput),
     # ('ubigraph', UbigraphOutput),
